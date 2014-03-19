@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20140220</FitNesseVersion>
+  <rootPath>OasisExamples.SimpleSynthuseTest1</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>5</exceptions>
+    </counts>
+    <runTimeInMillis>67</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+ &lt;br/&gt;&lt;span class="meta"&gt;classpath: build&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: lib/ivy/*&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: lib/mvn/*&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: plugins/*&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: fixtures/java&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;org.synthuse&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;script&lt;/td&gt;
+		&lt;td colspan="3"&gt;synthuse driver fixture &lt;span class="error"&gt;Could not invoke constructor for SynthuseDriverFixture[0]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;do &lt;span class="error"&gt;Method doOn[2] not found in eg.Division.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;waitForVisible&lt;/td&gt;
+		&lt;td&gt;on&lt;/td&gt;
+		&lt;td&gt;//win[@class='Notepad']&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;do &lt;span class="error"&gt;Method doOn[2] not found in eg.Division.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;windowSwitchToThis&lt;/td&gt;
+		&lt;td&gt;on&lt;/td&gt;
+		&lt;td&gt;//win[@class='Notepad']&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;do &lt;span class="error"&gt;Method doOn[2] not found in eg.Division.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;pause&lt;/td&gt;
+		&lt;td&gt;on&lt;/td&gt;
+		&lt;td&gt;1000&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;do &lt;span class="error"&gt;Method doOn[2] not found in eg.Division.&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;sendKeys&lt;/td&gt;
+		&lt;td&gt;on&lt;/td&gt;
+		&lt;td&gt;this is a test!&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</content>
+    <relativePageName>SimpleSynthuseTest1</relativePageName>
+    
+    
+    
+    <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='org.synthuse'}</instruction>
+        <slimResult>pass(org.synthuse)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>org.synthuse</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_0', instruction='make', instanceName='scriptTableActor', className='SynthuseDriverFixture', args=[]}</instruction>
+        <slimResult>null</slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_1_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for SynthuseDriverFixture[0]</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_1', instruction='call', instanceName='scriptTableActor', methodName='doOn', args=[waitForVisible, //win[@class='Notepad']]}</instruction>
+        <slimResult>null</slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_1_1</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>Method doOn[2] not found in eg.Division.</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_2', instruction='call', instanceName='scriptTableActor', methodName='doOn', args=[windowSwitchToThis, //win[@class='Notepad']]}</instruction>
+        <slimResult>null</slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_1_2</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>Method doOn[2] not found in eg.Division.</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_3', instruction='call', instanceName='scriptTableActor', methodName='doOn', args=[pause, 1000]}</instruction>
+        <slimResult>null</slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_1_3</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>Method doOn[2] not found in eg.Division.</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_4', instruction='call', instanceName='scriptTableActor', methodName='doOn', args=[sendKeys, this is a test!]}</instruction>
+        <slimResult>null</slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_1_4</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>Method doOn[2] not found in eg.Division.</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+      
+    </instructions>
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>68</totalRunTimeInMillis>
+  
+</testResults>
+

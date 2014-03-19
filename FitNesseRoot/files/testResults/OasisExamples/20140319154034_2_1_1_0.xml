@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20140220</FitNesseVersion>
+  <rootPath>OasisExamples</rootPath>
+    <pageHistoryReference>
+    <name>OasisExamples.SimpleFitNesseTest1</name>
+    <date>03/19/2014 15:40:34</date>
+    <pageHistoryLink>OasisExamples.SimpleFitNesseTest1?pageHistory&amp;resultDate=20140319154034</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>147</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>OasisExamples.SimpleSeleniumTest1</name>
+    <date>03/19/2014 15:40:35</date>
+    <pageHistoryLink>OasisExamples.SimpleSeleniumTest1?pageHistory&amp;resultDate=20140319154035</pageHistoryLink>
+    <counts>
+      <right>7</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>12164</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>OasisExamples.SimpleSikuliTest1</name>
+    <date>03/19/2014 15:40:47</date>
+    <pageHistoryLink>OasisExamples.SimpleSikuliTest1?pageHistory&amp;resultDate=20140319154047</pageHistoryLink>
+    <counts>
+      <right>3</right>
+      <wrong>1</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>3214</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>OasisExamples.SimpleSynthuseTest1</name>
+    <date>03/19/2014 15:40:50</date>
+    <pageHistoryLink>OasisExamples.SimpleSynthuseTest1?pageHistory&amp;resultDate=20140319154050</pageHistoryLink>
+    <counts>
+      <right>4</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>13966</runTimeInMillis>
+  </pageHistoryReference>
+    <finalCounts>
+    <right>2</right>
+    <wrong>1</wrong>
+    <ignores>1</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>32346</totalRunTimeInMillis>
+
+</suiteResults>
+
