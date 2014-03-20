@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="1.927" errors="0" skipped="0" tests="45" name="com.xebia.fitnesse.selenium.JavascriptTestCase">
+<testsuite failures="0" time="1.965" errors="0" skipped="0" tests="45" name="com.xebia.fitnesse.selenium.JavascriptTestCase">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_21\jre\bin"/>
@@ -60,46 +60,46 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.308" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnEscapedTargetToSelenese"/>
-  <testcase time="0.083" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnVariableWithVariableToSelenese"/>
-  <testcase time="0.082" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlParseVariablesInText"/>
-  <testcase time="0.045" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnVariableToSelenese"/>
-  <testcase time="0.049" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldWikiWordsAndUrlsToFitnesse"/>
-  <testcase time="0.044" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommentWithMoreTextToSelenese"/>
-  <testcase time="0.054" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnVariableWithEmbeddedVariableToSelenese"/>
-  <testcase time="0.069" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlConvertGlob"/>
-  <testcase time="0.058" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnComplexXPathPatternToSelenese"/>
-  <testcase time="0.058" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommentToSelenese"/>
-  <testcase time="0.048" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldExecuteCommandOnTargetToFitnesse"/>
-  <testcase time="0.048" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseExactToSeleneseWheneverPossible"/>
-  <testcase time="0.041" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnTargetToSelenese"/>
-  <testcase time="0.035" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnTargetWithValueWithSpacesToSelenese"/>
-  <testcase time="0.029" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testNoStartStopOption"/>
-  <testcase time="0.032" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnEscapedTargetWithEscapedValueToSelenese"/>
-  <testcase time="0.044" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldExecuteCommandOnTargetWithValueToSelenese"/>
-  <testcase time="0.057" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseDataPastedFromBrowser"/>
-  <testcase time="0.035" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnTextSeparatedByBars"/>
-  <testcase time="0.047" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseSubstitutedVariables"/>
+  <testcase time="0.312" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnEscapedTargetToSelenese"/>
+  <testcase time="0.088" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnVariableWithVariableToSelenese"/>
+  <testcase time="0.077" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlParseVariablesInText"/>
+  <testcase time="0.046" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnVariableToSelenese"/>
+  <testcase time="0.051" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldWikiWordsAndUrlsToFitnesse"/>
+  <testcase time="0.048" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommentWithMoreTextToSelenese"/>
+  <testcase time="0.051" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnVariableWithEmbeddedVariableToSelenese"/>
+  <testcase time="0.057" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlConvertGlob"/>
+  <testcase time="0.055" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnComplexXPathPatternToSelenese"/>
+  <testcase time="0.059" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommentToSelenese"/>
+  <testcase time="0.051" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldExecuteCommandOnTargetToFitnesse"/>
+  <testcase time="0.052" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseExactToSeleneseWheneverPossible"/>
+  <testcase time="0.034" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnTargetToSelenese"/>
+  <testcase time="0.032" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnTargetWithValueWithSpacesToSelenese"/>
+  <testcase time="0.031" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testNoStartStopOption"/>
+  <testcase time="0.033" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnEscapedTargetWithEscapedValueToSelenese"/>
+  <testcase time="0.039" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldExecuteCommandOnTargetWithValueToSelenese"/>
+  <testcase time="0.114" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseDataPastedFromBrowser"/>
+  <testcase time="0.033" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnTextSeparatedByBars"/>
+  <testcase time="0.052" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseSubstitutedVariables"/>
   <testcase time="0.025" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testLibraryModeOption"/>
-  <testcase time="0.028" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnComplexGlobPatternToSelenese"/>
-  <testcase time="0.029" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldExecuteStoreCommandToSelenese"/>
+  <testcase time="0.026" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnComplexGlobPatternToSelenese"/>
+  <testcase time="0.032" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldExecuteStoreCommandToSelenese"/>
   <testcase time="0.025" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseLenient"/>
-  <testcase time="0.025" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseBareActionCommand"/>
-  <testcase time="0.028" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlConvertExact"/>
-  <testcase time="0.031" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlEscapeBars"/>
-  <testcase time="0.03" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseGlobToSeleneseWheneverPossible"/>
-  <testcase time="0.021" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testCommand"/>
+  <testcase time="0.026" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseBareActionCommand"/>
+  <testcase time="0.027" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlConvertExact"/>
+  <testcase time="0.027" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlEscapeBars"/>
+  <testcase time="0.028" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseGlobToSeleneseWheneverPossible"/>
+  <testcase time="0.02" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testCommand"/>
   <testcase time="0.021" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseActionCommand"/>
-  <testcase time="0.025" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseRightActionToFitnesse"/>
+  <testcase time="0.026" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseRightActionToFitnesse"/>
   <testcase time="0.033" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseFailedCheckCommands"/>
-  <testcase time="0.023" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldAlwaysMakeEnsureCommandsForWaitForCommands"/>
+  <testcase time="0.024" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldAlwaysMakeEnsureCommandsForWaitForCommands"/>
   <testcase time="0.024" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldIgnoreFitnesseTableHeadings"/>
   <testcase time="0.02" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testExecuteCommandOnTargetWithValueToSelenese"/>
   <testcase time="0.018" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="testStartBrowserLine"/>
   <testcase time="0.023" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseStartBrowserLineToFitnesse"/>
   <testcase time="0.023" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shoudlConvertRegexp"/>
   <testcase time="0.019" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseCheckCommand"/>
-  <testcase time="0.019" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseBareCheckCommand"/>
+  <testcase time="0.018" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseBareCheckCommand"/>
   <testcase time="0.022" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldStoreCommandOnTargetToFitnesse"/>
   <testcase time="0.027" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldParseRegexpToSelenese"/>
   <testcase time="0.021" classname="com.xebia.fitnesse.selenium.JavascriptTestCase" name="shouldMakeCommentsForNonFitnesseLines"/>

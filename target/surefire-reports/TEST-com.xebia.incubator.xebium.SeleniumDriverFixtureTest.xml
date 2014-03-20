@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.318" errors="0" skipped="0" tests="11" name="com.xebia.incubator.xebium.SeleniumDriverFixtureTest">
+<testsuite failures="0" time="0.327" errors="0" skipped="0" tests="11" name="com.xebia.incubator.xebium.SeleniumDriverFixtureTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_21\jre\bin"/>
@@ -60,9 +60,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.169" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldResolveAlias"/>
+  <testcase time="0.172" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldResolveAlias"/>
   <testcase time="0.007" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldDoVerifyRegularTextNotPresent"/>
-  <testcase time="0.005" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldMatchWithoutRegularExpression"/>
+  <testcase time="0.006" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldMatchWithoutRegularExpression"/>
   <testcase time="0.006" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldIgnoreEmptyAlias"/>
   <testcase time="0.007" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldMatchMultiValueStrings"/>
   <testcase time="0.006" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldNegateIfCommandRequiresIt"/>
@@ -70,5 +70,5 @@
   <testcase time="0.007" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldVerifyRegularTextWithRegularExpressions"/>
   <testcase time="0.001" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="checkIsRegularTextNotPresent"/>
   <testcase time="0.001" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="checkIsRegularTextPresent"/>
-  <testcase time="0.006" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldIgnoreMissingAlias"/>
+  <testcase time="0.005" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldIgnoreMissingAlias"/>
 </testsuite>
