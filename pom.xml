@@ -425,7 +425,7 @@
 			<version>1.0.b2</version>
 		</dependency>
 		<dependency>
-			<groupId>xmlbeans</groupId>
+			<groupId>org.apache.xmlbeans</groupId>
 			<artifactId>xmlbeans</artifactId>
 			<version>2.3.0</version>
 		</dependency>

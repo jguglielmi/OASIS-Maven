@@ -60,13 +60,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.013" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureIntegrationTest" name="testVerifyCommands">
+  <testcase time="0.016" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureIntegrationTest" name="testVerifyCommands">
     <skipped/>
   </testcase>
-  <testcase time="0.013" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureIntegrationTest" name="testDefaultTest">
+  <testcase time="0.016" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureIntegrationTest" name="testDefaultTest">
     <skipped/>
   </testcase>
-  <testcase time="0.013" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureIntegrationTest" name="loadFirefoxProfile">
+  <testcase time="0.016" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureIntegrationTest" name="loadFirefoxProfile">
     <skipped/>
   </testcase>
 </testsuite>
