@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.327" errors="0" skipped="0" tests="11" name="com.xebia.incubator.xebium.SeleniumDriverFixtureTest">
+<testsuite failures="0" time="0.373" errors="0" skipped="0" tests="11" name="com.xebia.incubator.xebium.SeleniumDriverFixtureTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_21\jre\bin"/>
-    <property name="java.vm.version" value="23.21-b01"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\bin"/>
+    <property name="java.vm.version" value="24.51-b03"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
@@ -15,44 +15,45 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="Service Pack 1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\jguglielmi\workspace\OASIS-Maven"/>
-    <property name="java.runtime.version" value="1.7.0_21-b11"/>
+    <property name="user.dir" value="C:\Users\Jaison&apos;s\workspace\OASIS-Maven"/>
+    <property name="java.runtime.version" value="1.7.0_51-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_21\jre\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\JGUGLI~1\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\Jaison&apos;s\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="C:\Applications\Maven\apache-maven-3.0.4-bin\apache-maven-3.0.4\bin\m2.conf"/>
+    <property name="classworlds.conf" value="C:\Applications\Maven\apache-maven-3.1.1-bin\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk1.7.0_21\bin;C:\Applications\Maven\apache-maven-3.0.4-bin\apache-maven-3.0.4\bin;C:\Python33;C:\Python33\Scripts;%webdriver.chrome.driver%;%webdriver.chrome.driver%\chromedriver.exe;%webdriver.ie.driver%;%webdriver.ie.driver%\IEDriverServer.exe;C:\Program Files\TortoiseSVN\bin;C:\Applications\Ant\apache-ant-1.9.3\bin;C:\Applications\Ant\apache-ant-1.9.3;C:\Program Files (x86)\Git\cmd;C:\Program Files\Java\jdk1.7.0_21\bin;C:\Applications\Drivers\chrome;C:\Applications\Drivers\chrome\chromedriver.exe;C:\applications\Drivers\iexplore;C:\applications\Drivers\iexplore\IEDriverServer.exe;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_51\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Git\cmd;C:\Applications\Maven\apache-maven-3.1.1-bin;C:\Applications\Maven\apache-maven-3.1.1-bin\bin;C:\Program Files\Java\jdk1.7.0_51\bin;C:\Applications\Maven\apache-maven-3.1.1-bin;C:\Program Files\Java\jdk1.7.0_51;C:\Applications\Ant\apache-ant-1.9.3;C:\Applications\Ant\apache-ant-1.9.3\bin;C:\Program Files (x86)\Git\bin;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="6.1"/>
-    <property name="user.home" value="C:\Users\jguglielmi"/>
+    <property name="user.home" value="C:\Users\Jaison&apos;s"/>
     <property name="user.timezone" value="America/New_York"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.7"/>
     <property name="file.encoding" value="Cp1252"/>
-    <property name="user.name" value="JGuglielmi"/>
-    <property name="java.class.path" value="C:\Applications\Maven\apache-maven-3.0.4-bin\apache-maven-3.0.4\boot\plexus-classworlds-2.4.jar"/>
+    <property name="user.name" value="Jaison&apos;s"/>
+    <property name="java.class.path" value="C:\Applications\Maven\apache-maven-3.1.1-bin\boot\plexus-classworlds-2.5.1.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_21\jre"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_51\jre"/>
     <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Pfitnesse test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.7.0_21"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_21\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_21\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_21\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_21\jre\classes"/>
+    <property name="java.version" value="1.7.0_51"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_51\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_51\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_51\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="C:\Applications\Maven\apache-maven-3.0.4-bin\apache-maven-3.0.4"/>
+    <property name="maven.home" value="C:\Applications\Maven\apache-maven-3.1.1-bin"/>
     <property name="file.separator" value="\"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -60,15 +61,15 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.172" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldResolveAlias"/>
-  <testcase time="0.007" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldDoVerifyRegularTextNotPresent"/>
-  <testcase time="0.006" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldMatchWithoutRegularExpression"/>
-  <testcase time="0.006" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldIgnoreEmptyAlias"/>
-  <testcase time="0.007" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldMatchMultiValueStrings"/>
-  <testcase time="0.006" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldNegateIfCommandRequiresIt"/>
-  <testcase time="0.005" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldDoVerifyRegularTextPresent"/>
-  <testcase time="0.007" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldVerifyRegularTextWithRegularExpressions"/>
-  <testcase time="0.001" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="checkIsRegularTextNotPresent"/>
+  <testcase time="0.258" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldResolveAlias"/>
+  <testcase time="0.016" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldDoVerifyRegularTextNotPresent"/>
+  <testcase time="0.012" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldMatchWithoutRegularExpression"/>
+  <testcase time="0.015" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldIgnoreEmptyAlias"/>
+  <testcase time="0.01" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldMatchMultiValueStrings"/>
+  <testcase time="0.016" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldNegateIfCommandRequiresIt"/>
+  <testcase time="0.015" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldDoVerifyRegularTextPresent"/>
+  <testcase time="0.019" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldVerifyRegularTextWithRegularExpressions"/>
+  <testcase time="0.003" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="checkIsRegularTextNotPresent"/>
   <testcase time="0.001" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="checkIsRegularTextPresent"/>
-  <testcase time="0.005" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldIgnoreMissingAlias"/>
+  <testcase time="0.008" classname="com.xebia.incubator.xebium.SeleniumDriverFixtureTest" name="shouldIgnoreMissingAlias"/>
 </testsuite>
