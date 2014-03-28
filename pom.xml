@@ -176,7 +176,7 @@
 		<dependency>
 			<groupId>synthuse</groupId>
 			<artifactId>synthuse</artifactId>
-			<version>1.0</version>
+			<version>1.0.7</version>
 			<scope>runtime</scope>
 		</dependency>		
 		<dependency>
