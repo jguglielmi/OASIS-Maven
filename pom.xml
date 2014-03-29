@@ -14,8 +14,8 @@
 	<version>1.0</version>
 	<packaging>jar</packaging>
 
-	<name>OASIS</name>
-	<url>http://github.com/jguglielmi/OASIS</url>
+	<name>OASIS-Maven</name>
+	<url>http://github.com/jguglielmi/OASIS-Maven</url>
 
 	<description>
    Selenium, Sikuli, Synthuse, and JMeter Fixture.
