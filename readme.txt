@@ -1,5 +1,7 @@
-OASIS
+OASIS-Maven
 (Open Automated Source Integrated Suite)
+
+Pre-requisites: The user needs to download and setup Java, Maven, Ant, Ivy, and WGet (located in lib directory, please add to classpath)
 
 OASIS is an open source, Java based, and platform independent FitNesse plugin that allows testers and developers the ability to automate tests using a variety of different tools quickly and with ease. Built around the Xebium framework, OASIS seeks to increase the capabilities of testing by adding in thick client and load testing support.
 
