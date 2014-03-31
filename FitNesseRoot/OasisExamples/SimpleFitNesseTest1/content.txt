@@ -1,7 +1,5 @@
 !contents -R2 -g -p -f -h
 
-!define TEST_SYSTEM {slim} 
-
 Simple Math Fitnesse Fixture test
 
 !| script | eg.Division |
