@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20140220</FitNesseVersion>
+  <rootPath>OasisExamples.JdbcExample</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>147</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="fail"&gt;import: &amp;lt;strong&amp;gt;Bad table! Import tables must have at least two rows.&amp;lt;/strong&amp;gt;&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;org.qedsys.fitnesse&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="6"&gt;&lt;span class="fail"&gt;sql driver fixture: &amp;lt;strong&amp;gt;Bad table! DecisionTables should have at least three rows.&amp;lt;/strong&amp;gt;&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;connect to&lt;/td&gt;
+		&lt;td&gt;database&lt;/td&gt;
+		&lt;td&gt;as user&lt;/td&gt;
+		&lt;td&gt;user&lt;/td&gt;
+		&lt;td&gt;with password&lt;/td&gt;
+		&lt;td&gt;password&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>JdbcExample</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>1</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>1854</totalRunTimeInMillis>
+  
+</testResults>
+

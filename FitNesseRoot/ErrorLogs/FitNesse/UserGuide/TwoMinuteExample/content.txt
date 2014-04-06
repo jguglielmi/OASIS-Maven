@@ -1,0 +1,8 @@
+
+!3 !-slim:fitnesse.slim.SlimService-!
+|'''Date: '''| 6:32:17 AM (EDT) on Sunday, April 6, 2014 |
+|'''Test Page: '''|.FitNesse.UserGuide.TwoMinuteExample|
+|'''Command: '''| !-java -cp C:\Users\Jaison's\workspace\OASIS-Maven\fitnesse-standalone.jar;classes;C:\Users\Jaison's\workspace\OASIS-Maven\lib\JmeterBundle.jar;C:\Users\Jaison's\workspace\OASIS-Maven\lib\sqljdbc4.jar fitnesse.slim.SlimService  8089-! |
+|'''Exit code: '''| 0 |
+|'''Time elapsed: '''| 0.877 seconds |
+

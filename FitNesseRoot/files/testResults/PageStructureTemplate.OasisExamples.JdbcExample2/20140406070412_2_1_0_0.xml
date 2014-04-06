@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20140220</FitNesseVersion>
+  <rootPath>PageStructureTemplate.OasisExamples.JdbcExample2</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>43</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.xebia.incubator.xebium&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.xebia.sikuli&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;org.synthuse&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;org.qedsys.fitnesse&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>SuiteSetUp</relativePageName>
+    
+    
+    
+    <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.xebia.incubator.xebium'}</instruction>
+        <slimResult>pass(com.xebia.incubator.xebium)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.xebia.incubator.xebium</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_0_1', instruction='import', path='com.xebia.sikuli'}</instruction>
+        <slimResult>pass(com.xebia.sikuli)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_1</instructionId>
+                    <col>0</col>
+                              <row>2</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.xebia.sikuli</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_0_2', instruction='import', path='org.synthuse'}</instruction>
+        <slimResult>pass(org.synthuse)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_2</instructionId>
+                    <col>0</col>
+                              <row>3</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>org.synthuse</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_0_3', instruction='import', path='org.qedsys.fitnesse'}</instruction>
+        <slimResult>pass(org.qedsys.fitnesse)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_3</instructionId>
+                    <col>0</col>
+                              <row>4</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>org.qedsys.fitnesse</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+      
+    </instructions>
+    
+  </result>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>2</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>241</runTimeInMillis>
+    <content>&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand All&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse All&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="PageStructureTemplate.OasisExamples.ScenarioLibrary"&gt;.PageStructureTemplate.OasisExamples.ScenarioLibrary&lt;/a&gt; &lt;a href="PageStructureTemplate.OasisExamples.ScenarioLibrary?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;scenario&lt;/td&gt;
+		&lt;td&gt;connect to database and get count&lt;/td&gt;
+		&lt;td colspan="4"&gt;count&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;connect to&lt;/td&gt;
+		&lt;td&gt;&lt;a href="http://demodatabase:8000/sql"&gt;http://demodatabase:8000/sql&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;as user&lt;/td&gt;
+		&lt;td&gt;root&lt;/td&gt;
+		&lt;td&gt;with password&lt;/td&gt;
+		&lt;td&gt;password&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;check&lt;/td&gt;
+		&lt;td&gt;execute count&lt;/td&gt;
+		&lt;td&gt;SELECT COUNT (*) FROM TABLE&lt;/td&gt;
+		&lt;td colspan="3"&gt;@count&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;script&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;sql driver fixture&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="scenario closed"&gt;
+		&lt;td class="fail"&gt;connect to database and get count&lt;/td&gt;
+		&lt;td class="fail"&gt;5&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="scenario-detail closed-detail"&gt;&lt;td colspan="2"&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;scenario&lt;/td&gt;
+		&lt;td&gt;connect to database and get count&lt;/td&gt;
+		&lt;td colspan="4"&gt;count&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="fail"&gt;connect to&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;a href="http://demodatabase:8000/sql"&gt;http://demodatabase:8000/sql&lt;/a&gt;&lt;/td&gt;
+		&lt;td&gt;as user&lt;/td&gt;
+		&lt;td&gt;root&lt;/td&gt;
+		&lt;td&gt;with password&lt;/td&gt;
+		&lt;td&gt;password&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;check&lt;/td&gt;
+		&lt;td&gt;execute count&lt;/td&gt;
+		&lt;td&gt;SELECT COUNT (*) FROM TABLE&lt;/td&gt;
+		&lt;td colspan="3"&gt;[-1] &lt;span class="fail"&gt;expected [5]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>JdbcExample2</relativePageName>
+    
+    
+    
+    <instructions>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_0', instruction='make', instanceName='scriptTableActor', className='SqlDriverFixture', args=[]}</instruction>
+        <slimResult>pass(sql driver fixture)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>scriptTable_1_0</instructionId>
+                    <col>1</col>
+                              <row>0</row>
+                    <type>ConstructionExpectation</type>
+                                        <evaluationMessage>sql driver fixture</evaluationMessage>
+                  </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_1/scriptTable_0_0', instruction='call', instanceName='scriptTableActor', methodName='connectToAsUserWithPassword', args=[&lt;a href="http://demodatabase:8000/sql"&gt;http://demodatabase:8000/sql&lt;/a&gt;, root, password]}</instruction>
+        <slimResult>fail()</slimResult>
+                <expectation>
+                    <status>fail</status>
+                    <instructionId>scriptTable_1_1/scriptTable_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ScriptActionExpectation</type>
+                                      </expectation>
+        
+      </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_1_1/scriptTable_0_1', instruction='call', instanceName='scriptTableActor', methodName='executeCount', args=[SELECT COUNT (*) FROM TABLE]}</instruction>
+        <slimResult>fail(a=-1;e=5)</slimResult>
+                <expectation>
+                    <status>fail</status>
+                    <instructionId>scriptTable_1_1/scriptTable_0_1</instructionId>
+                    <col>3</col>
+                              <row>2</row>
+                    <type>ReturnedValueExpectation</type>
+                    <actual>-1</actual>
+                              <expected>5</expected>
+                            </expectation>
+        
+      </instructionResult>
+      
+    </instructions>
+    
+  </result>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>12</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;</content>
+    <relativePageName>SuiteTearDown</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>2</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>2725</totalRunTimeInMillis>
+  
+</testResults>
+
