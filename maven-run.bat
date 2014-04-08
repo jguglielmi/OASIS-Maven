@@ -1,3 +1,4 @@
+call mvn eclipse:clean eclipse:eclipse
 set WGET_HOME=%CD%\lib\wget-1.11.4-1-bin
 set Path=%Path%;%WGET_HOME%;%WGET_HOME%\bin
 call mvn install:install-file -Dfile=./fitnesse-standalone.jar -DgroupId=org.fitnesse -DartifactId=fitnesse-standalone -Dversion=03192014 -Dpackaging=jar
