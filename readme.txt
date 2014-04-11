@@ -17,5 +17,7 @@ OASIS pulls from the open source tools:
 For examples of how to use OASIS, please visit the wiki page Youtube videos.
 
 
-To start using Oasis simply run the "maven-run.bat" file.  From Maven, you may have to perform a right-click -> Maven -> Update Project.
+This program relies on Java 1.7 to run.  You need to also download Eclipse with the m2e eclipse configuration.
+To use the OASIS-Maven variant with M2E, configure your project in Eclipse as a Maven Project.  Then from a command line go to the source directory and execute "maven-run.bat".
+
 You can also execute it from command line to skip the dependency download with the command "mvn -Pfitnesse test"

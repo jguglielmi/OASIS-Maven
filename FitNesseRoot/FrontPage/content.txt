@@ -15,5 +15,3 @@ OasisExamples
 
 !note Release ${FITNESSE_VERSION}
 
-QipPage
-
