@@ -1,5 +1,4 @@
 !contents -R2 -g -p -f -h
-open up notepad first!
 
 | import | 
 | org.synthuse | 

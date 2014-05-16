@@ -4,28 +4,38 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.thoughtworks.selenium.CommandProcessor;
+import org.openqa.selenium.WebDriverException;
+
+import java.io.IOException;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SeleniumDriverFixtureTest {
 
-	@Mock
-	private CommandProcessor commandProcessor;
+@Mock
+private CommandProcessor commandProcessor;
 
-	private SeleniumDriverFixture seleniumDriverFixture;
+@Mock
+private ScreenCapture screenCapture;
 
-	@Before
-	public void setup() throws Exception {
-		this.seleniumDriverFixture = new SeleniumDriverFixture();
-		seleniumDriverFixture.setCommandProcessor(commandProcessor);
-	}
+private SeleniumDriverFixture seleniumDriverFixture;
+
+@Before
+public void setup() throws Exception {
+this.seleniumDriverFixture = new SeleniumDriverFixture();
+seleniumDriverFixture.setCommandProcessor(commandProcessor);
+seleniumDriverFixture.setScreenCapture(screenCapture);
+}
 
     @Test
     public void shouldDoVerifyRegularTextPresent() {
@@ -56,32 +66,32 @@ public class SeleniumDriverFixtureTest {
     }
 
     @Test
-	public void shouldVerifyRegularTextWithRegularExpressions() throws Exception {
-		given(commandProcessor.doCommand(anyString(), isA(String[].class))).willReturn("Di 9 november 2010. Het laatste nieuws het eerst op nu.nl");
-		final boolean result = seleniumDriverFixture.doOnWith("verifyText", "//*[@id='masthead']/div/h1", "regexp:.*Het laatste nieuws het eerst op nu.nl");
-		assertThat(result, is(true));
-	}
+public void shouldVerifyRegularTextWithRegularExpressions() throws Exception {
+given(commandProcessor.doCommand(anyString(), isA(String[].class))).willReturn("Di 9 november 2010. Het laatste nieuws het eerst op nu.nl");
+final boolean result = seleniumDriverFixture.doOnWith("verifyText", "//*[@id='masthead']/div/h1", "regexp:.*Het laatste nieuws het eerst op nu.nl");
+assertThat(result, is(true));
+}
 
-	@Test
-	public void shouldNegateIfCommandRequiresIt() throws Exception {
-		given(commandProcessor.doCommand(anyString(), isA(String[].class))).willReturn("Di 9 november 2010. Het laatste nieuws het eerst op nu.nl");
-		final boolean result = seleniumDriverFixture.doOnWith("verifyNotText", "//*[@id='masthead']/div/h1", "regexp:.*Het laatste nieuws het eerst op nu.nl");
-		assertThat(result, is(false));
-	}
+@Test
+public void shouldNegateIfCommandRequiresIt() throws Exception {
+given(commandProcessor.doCommand(anyString(), isA(String[].class))).willReturn("Di 9 november 2010. Het laatste nieuws het eerst op nu.nl");
+final boolean result = seleniumDriverFixture.doOnWith("verifyNotText", "//*[@id='masthead']/div/h1", "regexp:.*Het laatste nieuws het eerst op nu.nl");
+assertThat(result, is(false));
+}
 
-	@Test
-	public void shouldMatchWithoutRegularExpression() throws Exception {
-		given(commandProcessor.doCommand(anyString(), isA(String[].class))).willReturn("Di 9 november 2010. Het laatste nieuws het eerst op nu.nl");
-		final boolean result = seleniumDriverFixture.doOnWith("verifyText", "//*[@id='masthead']/div/h1",  "*Het laatste nieuws het eerst op nu.nl");
-		assertThat(result, is(true));
-	}
-	
-	@Test
-	public void shouldMatchMultiValueStrings() {
-		given(commandProcessor.getStringArray(anyString(), isA(String[].class))).willReturn(new String[] { "Suite", "Test", "Normal" });
-		final boolean result = seleniumDriverFixture.doOnWith("verifySelectOptions", "//foo",  "Suite,Test,Normal");
-		assertThat(result, is(true));
-	}
+@Test
+public void shouldMatchWithoutRegularExpression() throws Exception {
+given(commandProcessor.doCommand(anyString(), isA(String[].class))).willReturn("Di 9 november 2010. Het laatste nieuws het eerst op nu.nl");
+final boolean result = seleniumDriverFixture.doOnWith("verifyText", "//*[@id='masthead']/div/h1", "*Het laatste nieuws het eerst op nu.nl");
+assertThat(result, is(true));
+}
+
+@Test
+public void shouldMatchMultiValueStrings() {
+given(commandProcessor.getStringArray(anyString(), isA(String[].class))).willReturn(new String[] { "Suite", "Test", "Normal" });
+final boolean result = seleniumDriverFixture.doOnWith("verifySelectOptions", "//foo", "Suite,Test,Normal");
+assertThat(result, is(true));
+}
 
     @Test
     public void shouldResolveAlias() {
@@ -108,4 +118,22 @@ public class SeleniumDriverFixtureTest {
         assertThat(result, is(true));
     }
 
+@Test
+public void shouldTakeScreenshotOnError() throws IOException {
+seleniumDriverFixture.saveScreenshotAfter("FAILURE");
+
+when(commandProcessor.getBoolean("isElementPresent", new String[] { "id=verwijderen" })).thenReturn(true);
+when(commandProcessor.doCommand("click", new String[] {"id=verwijderen"}))
+.thenThrow(new WebDriverException("Click failed: ReferenceError: Can't find variable: handle"));
+when(screenCapture.requireScreenshot(any(ExtendedSeleniumCommand.class), anyBoolean()))
+.thenReturn(true);
+
+try {
+seleniumDriverFixture.doOn("clickAndWait", "id=verwijderen");
+} catch (Throwable t) {
+// Not sure whether we want to propagate this exception... that's the current behaviour though.
+}
+verify(screenCapture).setScreenshotPolicy("FAILURE");
+//verify(screenCapture).captureScreenshot("clickAndWait", new String[] { "id=verwijderen" });
+}
 }

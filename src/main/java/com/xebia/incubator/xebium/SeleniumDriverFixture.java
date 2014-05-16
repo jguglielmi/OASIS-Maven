@@ -22,6 +22,7 @@ import com.google.common.base.Supplier;
 import com.thoughtworks.selenium.CommandProcessor;
 import com.thoughtworks.selenium.HttpCommandProcessor;
 import com.thoughtworks.selenium.SeleniumException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -44,8 +45,10 @@ import static com.xebia.incubator.xebium.FitNesseUtil.*;
 import static org.apache.commons.lang.StringUtils.join;
 
 import java.security.*;
+
 import javax.crypto.*;
 import javax.crypto.spec.*;
+
 import org.synthuse.*; //for showing status window
 
 /**
@@ -55,7 +58,7 @@ public class SeleniumDriverFixture {
 
 	private static final Logger LOG = LoggerFactory.getLogger(SeleniumDriverFixture.class);
 
-    private DefaultWebDriverSupplier defaultWebDriverSupplier = new DefaultWebDriverSupplier();
+	private DefaultWebDriverSupplier defaultWebDriverSupplier = new DefaultWebDriverSupplier();
 
 	private static final String ALIAS_PREFIX = "%";
 
@@ -75,60 +78,66 @@ public class SeleniumDriverFixture {
 	private LocatorCheck locatorCheck;
 
 	private Map<String, String> aliases = new HashMap<String, String>();
-	
+
 	public boolean showStatusText = true;
 
 	public SeleniumDriverFixture() {
 		super();
 	}
 
-    private WebDriver defaultWebDriverInstance() {
-      return defaultWebDriverSupplier.newWebDriver();
-    }
-
-    private CommandProcessor startWebDriverCommandProcessor(String browserUrl, WebDriver webDriver) {
-		browserUrl = removeAnchorTag(browserUrl);
-		return new WebDriverCommandProcessor(browserUrl, webDriver);
+	private WebDriver defaultWebDriverInstance() {
+		return defaultWebDriverSupplier.newWebDriver();
 	}
 
-    /**
-     * Configure the custom Firefox preferences (javascript) file on the webdriver factory.
-     *
-     * @param filename
-     */
-    public void loadCustomBrowserPreferencesFromFile(String filename) {
-        defaultWebDriverSupplier.setCustomProfilePreferencesFile(new File(filename));
-    }
+	private CommandProcessor startWebDriverCommandProcessor(String browserUrl, WebDriver webDriver) {
+		browserUrl = removeAnchorTag(browserUrl);
+		WebDriverCommandProcessor driver = new WebDriverCommandProcessor(browserUrl, webDriver);
+		addMissingSeleneseCommands(driver);
+		return driver;
+	}
+
+	private void addMissingSeleneseCommands(WebDriverCommandProcessor driver) {
+		driver.addMethod("sendKeys", driver.getMethod("typeKeys"));
+	}
 
 	/**
-     * Configure the custom Firefox profiledirectory on the webdriver factory.
-     *
+	 * Configure the custom Firefox preferences (javascript) file on the webdriver factory.
+	 *
+	 * @param filename
+	 */
+	public void loadCustomBrowserPreferencesFromFile(String filename) {
+		defaultWebDriverSupplier.setCustomProfilePreferencesFile(new File(filename));
+	}
+
+	/**
+	 * Configure the custom Firefox profiledirectory on the webdriver factory.
+	 *
 	 * @param directory
 	 */
 	public void loadFirefoxProfileFromDirectory(String directory) {
-        defaultWebDriverSupplier.setCustomProfilePreferencesFile(new File(directory));
+		defaultWebDriverSupplier.setProfileDirectory(new File(directory));
 	}
 
 	/**
 	 * @param browser Name of the browser, as accepted by the DefaultWebDriverSupplier.
 	 */
 	private void setBrowser(String browser) {
-        defaultWebDriverSupplier.setBrowser(browser);
+		defaultWebDriverSupplier.setBrowser(browser);
 	}
 
-    /**
-     * <p><code>
-     * | start driver | <i>$Driver</i> | on url | <i>http://localhost</i> |
-     * </code></p>
-     *
-     * @param webDriver a WebDriver instance
-     * @param browserUrl
-     */
-    public void startDriverOnUrl(final WebDriver webDriver, final String browserUrl) {
-        setCommandProcessor(startWebDriverCommandProcessor(browserUrl, webDriver));
-        setTimeoutOnSelenium();
-        LOG.debug("Started command processor");
-    }
+	/**
+	 * <p><code>
+	 * | start driver | <i>$Driver</i> | on url | <i>http://localhost</i> |
+	 * </code></p>
+	 *
+	 * @param webDriver a WebDriver instance
+	 * @param browserUrl
+	 */
+	public void startDriverOnUrl(final WebDriver webDriver, final String browserUrl) {
+		setCommandProcessor(startWebDriverCommandProcessor(browserUrl, webDriver));
+		setTimeoutOnSelenium();
+		LOG.debug("Started command processor");
+	}
 
 	/**
 	 * <p><code>
@@ -140,7 +149,7 @@ public class SeleniumDriverFixture {
 	 */
 	public void startBrowserOnUrl(final String browser, final String browserUrl) {
 		setBrowser(browser);
-        startDriverOnUrl(defaultWebDriverInstance(), browserUrl);
+		startDriverOnUrl(defaultWebDriverInstance(), browserUrl);
 	}
 
 	/**
@@ -194,14 +203,18 @@ public class SeleniumDriverFixture {
 		locatorCheck = new LocatorCheck(commandProcessor);
 		LOG.info("Started new command processor (timeout: " + timeout + "ms, step delay: " + stepDelay + "ms, poll interval: " + pollDelay + "ms)");
 	}
-	
+
 	public void showStatusText() {
 		showStatusText = true;
 	}
-	
+
 	public void hideStatusText() {
 		showStatusText = false;
 	}	
+
+	void setScreenCapture(ScreenCapture screenCapture) {
+		this.screenCapture = screenCapture;
+	}
 
 	/**
 	 * <p><code>
@@ -237,9 +250,9 @@ public class SeleniumDriverFixture {
 	 */
 	private void setTimeoutOnSelenium() {
 		executeCommand("setTimeout", new String[] { "" + this.timeout });
-        WebDriver.Timeouts timeouts = getWebDriver().manage().timeouts();
-        timeouts.setScriptTimeout(this.timeout, TimeUnit.MILLISECONDS);
-        timeouts.pageLoadTimeout(this.timeout, TimeUnit.MILLISECONDS);
+		WebDriver.Timeouts timeouts = getWebDriver().manage().timeouts();
+		timeouts.setScriptTimeout(this.timeout, TimeUnit.MILLISECONDS);
+		timeouts.pageLoadTimeout(this.timeout, TimeUnit.MILLISECONDS);
 	}
 
 	/**
@@ -373,22 +386,22 @@ public class SeleniumDriverFixture {
 		return is(command, new String[] { unalias(target) });
 	}
 
-    public String is(final String command, final String[] parameters) {
-        ExtendedSeleniumCommand seleniumCommand = new ExtendedSeleniumCommand(command);
-        String output = executeCommand(seleniumCommand, parameters, stepDelay);
+	public String is(final String command, final String[] parameters) {
+		ExtendedSeleniumCommand seleniumCommand = new ExtendedSeleniumCommand(command);
+		String output = executeCommand(seleniumCommand, parameters, stepDelay);
 
-        if (seleniumCommand.isBooleanCommand() && seleniumCommand.isNegateCommand()) {
-             if ("true".equals(output)) {
-                output = "false";
-            } else if ("false".equals(output)) {
-                output = "true";
-            } else {
-                throw new IllegalStateException("Illegal boolean value: '" + output + "'");
-            }
-        }
+		if (seleniumCommand.isBooleanCommand() && seleniumCommand.isNegateCommand()) {
+			if ("true".equals(output)) {
+				output = "false";
+			} else if ("false".equals(output)) {
+				output = "true";
+			} else {
+				throw new IllegalStateException("Illegal boolean value: '" + output + "'");
+			}
+		}
 
-        return output;
-    }
+		return output;
+	}
 
 	/**
 	 * Same as {@link #isOn(String, String)}, only with "with" statement, analog to "do-on-with" command.
@@ -425,8 +438,8 @@ public class SeleniumDriverFixture {
 			String alias = value.substring(ALIAS_PREFIX.length());
 			String subst = aliases.get(alias);
 			if (subst != null) {
-			    LOG.info("Expanded alias '" + alias + "' to '" + result + "'");
-			    result = subst;
+				LOG.info("Expanded alias '" + alias + "' to '" + result + "'");
+				result = subst;
 			}
 		}
 		return result;
@@ -436,49 +449,53 @@ public class SeleniumDriverFixture {
 	public WebElement searchAllFrames(String elementXpath) {
 		return searchAllFrames(getWebDriver(), elementXpath, new ArrayList<WebElement>());
 	}
-	
+
 	public WebElement searchAllFrames(WebDriver driver, String elementXpath, List <WebElement> frameSwitches) {
 		if (frameSwitches.size() == 0) //if starting then make sure to search from top
-				driver.switchTo().defaultContent();
+			driver.switchTo().defaultContent();
 		WebElement element = null; //return null if not found or error during search.
 		try {
-				element = driver.findElement(By.xpath(elementXpath));// need to catch in case not found
+			element = driver.findElement(By.xpath(elementXpath));// need to catch in case not found
 		}catch(Exception e) {}
 		if (element == null)
 		{
-				List <WebElement> framesList = null;
-				try {
-						framesList = driver.findElements(By.xpath("//iframe|//frame"));
-				}catch(Exception e) {}
-				if (framesList == null)
-						return null;
-				for(WebElement frame:framesList){
-						// need to start from the top and switch back to next frame
-						driver.switchTo().defaultContent();
-						for(WebElement nestedFrame:frameSwitches){//nested frames list
-								driver.switchTo().frame(nestedFrame);
-						}
-						driver.switchTo().frame(frame);
-						
-						frameSwitches.add(frame);
-						element =  searchAllFrames(driver, elementXpath, frameSwitches);
-						if (element != null)
-								return element; // element found
-						else
-								frameSwitches.remove(frame); //this frame had nothing so remove it from the list
+			List <WebElement> framesList = null;
+			try {
+				framesList = driver.findElements(By.xpath("//iframe|//frame"));
+			}catch(Exception e) {}
+			if (framesList == null)
+				return null;
+			for(WebElement frame:framesList){
+				// need to start from the top and switch back to next frame
+				driver.switchTo().defaultContent();
+				for(WebElement nestedFrame:frameSwitches){//nested frames list
+					driver.switchTo().frame(nestedFrame);
 				}
-				return null; //element not found
+				driver.switchTo().frame(frame);
+
+				frameSwitches.add(frame);
+				element =  searchAllFrames(driver, elementXpath, frameSwitches);
+				if (element != null)
+					return element; // element found
+				else
+					frameSwitches.remove(frame); //this frame had nothing so remove it from the list
+			}
+			return null; //element not found
 		}
 		else
-				return element; //element found
+			return element; //element found
 	}
-	
+
 	private boolean executeDoCommand(final String methodName, final String[] values) {
 
-		final ExtendedSeleniumCommand command = new ExtendedSeleniumCommand(methodName);
+		ExtendedSeleniumCommand command = new ExtendedSeleniumCommand(methodName);
+
 
 		String output = null;
 		boolean result = true;
+		
+		SeleniumCommandResult commandResult = new SeleniumCommandResult(result, output, null);
+
 
 		boolean locatorFlag = locatorCheck.verifyElementPresent(command, values);
 
@@ -488,70 +505,103 @@ public class SeleniumDriverFixture {
 				xpathStr = values[0];
 			if (searchAllFrames(xpathStr) != null)
 				locatorFlag = true; //searchAllFrames found a matched and switchTo the correct frame
+			if(searchAllFrames(xpathStr) == null)
+				commandResult = failure();
 		}
-		
+
 		//display status of the command that is executing
 		String joinedArgs = "";
 		for (String arg : values)
 			joinedArgs += arg + " | ";
 		if (joinedArgs.endsWith("| "))
 			joinedArgs.substring(0, joinedArgs.length()-2);
-			
+
 		StatusWindow sw = null;
 		if (showStatusText)
 			sw = new StatusWindow(methodName + " " + joinedArgs, -1);
-			
+
 		if (!locatorFlag) {
-			result = false;
-		} else if (command.requiresPolling()) {
-			long timeoutTime = System.currentTimeMillis() + timeout;
-			String xpathStr = "";
-			if (values.length > 0)
-				xpathStr = values[0];
-			do {
-				if (methodName.equals("waitForVisible") || methodName.equals("waitForElementPresent") ) // search and select the correct frame before executing selenium command
-					searchAllFrames(xpathStr);
-				output = executeCommand(command, values, pollDelay);
-				result = checkResult(command, values[values.length - 1], output);
-			} while (!result && timeoutTime > System.currentTimeMillis());
+			commandResult.result = false;
+		} 
+		else if (command.requiresPolling()) {
+			commandResult = executeDoCommandPolling(values, command);
+		} 
+		else {
+			commandResult = executeAndCheckResult(command, values, stepDelay, sw);
 
-			LOG.info("WaitFor- command '" + command.getSeleniumCommand() +  (result ? "' succeeded" : "' failed"));
-
-		} else {
-			try {
-				output = executeCommand(command, values, stepDelay);
-			} catch(SeleniumException e) {
-				if (sw != null)
-					sw.dispose();//close status window on exceptions
-				throw e;
-			}
 			if (command.isCaptureEntirePageScreenshotCommand()) {
-				writeToFile(values[0], output);
-				result = true;
-			} else if (command.isAssertCommand() || command.isVerifyCommand() || command.isWaitForCommand()) {
-				String expected = values[values.length - 1];
-				result = checkResult(command, expected, output);
-				LOG.info("Command '" + command.getSeleniumCommand() + "' returned '" + output + "' => " + (result ? "ok" : "not ok, expected '" + expected + "'"));
-			} else {
-				LOG.info("Command '" + command.getSeleniumCommand() + "' returned '" + output + "'");
+				writeToFile(values[0], commandResult.output);
 			}
 		}
 
-		if (screenCapture.requireScreenshot(command, result)) {
+		if (screenCapture.requireScreenshot(command, commandResult.result)) {
 			screenCapture.captureScreenshot(methodName, values);
 		}
-		
+
 		if (sw != null)
 			sw.dispose();//close status window
 
-		if (!result && command.isAssertCommand()) {
+		if (commandResult.failed() && command.isAssertCommand()) {
 			if (stopBrowserOnAssertion) {
 				stopBrowser();
 			}
 			throw new AssertionAndStopTestError(output);
 		}
-		return result;
+
+		if (commandResult.hasException()) {
+			throw new AssertionError(commandResult.getException());
+		}
+
+		else{
+			return commandResult.result;
+		}
 	}
+
+
+
+	private SeleniumCommandResult executeDoCommandPolling(String[] values, ExtendedSeleniumCommand command) {
+		SeleniumCommandResult commandResult;
+		long timeoutTime = System.currentTimeMillis() + timeout;
+		String xpathStr = "";
+		if (values.length > 0)
+			xpathStr = values[0];
+
+		do {
+			if (command.getMethodName().equals("waitForVisible") || command.getMethodName().equals("waitForElementPresent") ) // search and select the correct frame before executing selenium command
+				searchAllFrames(xpathStr);
+			commandResult = executeAndCheckResult(command, values, 0, null);
+			if (commandResult.failed()) {
+				delayIfNeeded(pollDelay);
+			}
+		}
+		while (commandResult.failed() && timeoutTime > System.currentTimeMillis());
+
+		LOG.info("WaitFor- command '" + command.getSeleniumCommand() +  (commandResult.succeeded() ? "' succeeded" : "' failed"));
+		return commandResult;
+	}
+
+	private SeleniumCommandResult executeAndCheckResult(ExtendedSeleniumCommand command, String[] values, long delay, StatusWindow sw) {
+		try {
+			String output = executeCommand(command, values, stepDelay);
+
+			if (command.requiresPolling() || command.isAssertCommand() || command.isVerifyCommand() || command.isWaitForCommand()) {
+				String expected = values[values.length - 1];
+				boolean result = checkResult(command, expected, output);
+				LOG.info("Command '" + command.getSeleniumCommand() + "' returned '" + output + "' => " + (result ? "ok" : "not ok, expected '" + expected + "'"));
+
+				return new SeleniumCommandResult(result, output, null);
+			}
+			else {
+				LOG.info("Command '" + command.getSeleniumCommand() + "' returned '" + output + "'");
+				return success(output);
+			}
+		} catch(SeleniumException e) {
+			if (sw != null)
+				sw.dispose();//close status window on exceptions
+			throw e;
+		}
+
+	} 
 
 	private String executeCommand(final ExtendedSeleniumCommand command, final String[] values, long delay) {
 		if (LOG.isDebugEnabled()) {
@@ -560,9 +610,9 @@ public class SeleniumDriverFixture {
 
 		if (commandProcessor == null) {
 			throw new IllegalStateException("Command processor not running. " +
-							"First start it by invoking startBrowserOnUrl.");
+					"First start it by invoking startBrowserOnUrl.");
 		}
-		
+
 
 		// Handle special cases first
 		if ("pause".equals(command.getSeleniumCommand())) {
@@ -573,7 +623,7 @@ public class SeleniumDriverFixture {
 			}
 			return null;
 		}
-		
+
 		if ("contextMenu".equals(command.getSeleniumCommand())) {
 			try {
 				WebElement webElement = getWebDriver().findElement(By.xpath(values[0]));
@@ -641,7 +691,7 @@ public class SeleniumDriverFixture {
 	private void writeToFile(final String filename, final String output) {
 		File file = asFile(filename);
 		try {
-            createParentDirectoryIfNeeded(file);
+			createParentDirectoryIfNeeded(file);
 
 			ScreenCapture.writeToFile(file, output);
 		} catch (IOException e) {
@@ -649,15 +699,51 @@ public class SeleniumDriverFixture {
 		}
 	}
 
-    private void createParentDirectoryIfNeeded(File file) throws IOException {
-        if (file.getParentFile() != null && !file.getParentFile().exists()) {
-            if (!file.getParentFile().mkdirs()) {
-                throw new IOException("Could not create parent directory " + file.getParent());
-            }
-        }
-    }
+	private void createParentDirectoryIfNeeded(File file) throws IOException {
+		if (file.getParentFile() != null && !file.getParentFile().exists()) {
+			if (!file.getParentFile().mkdirs()) {
+				throw new IOException("Could not create parent directory " + file.getParent());
+			}
+		}
+	}
 
-    public void stopBrowser() {
+	private void waitForPageLoadIfNeeded(ExtendedSeleniumCommand command) {
+		if (command.isAndWaitCommand()) {
+			commandProcessor.doCommand("waitForPageToLoad", new String[] { "" + timeout });
+		}
+	}
+
+	private String getCommandOutput(ExtendedSeleniumCommand command, String[] values) {
+		try {
+			if (command.returnTypeIsArray()) {
+				return executeArrayCommand(command.getSeleniumCommand(), values);
+			} else {
+				return executeCommand(command.getSeleniumCommand(), values);
+			}
+		} catch (final SeleniumException e) {
+			String output = "Execution of command failed: " + e.getMessage();
+			LOG.error(output);
+
+			if (!(command.isAssertCommand() || command.isVerifyCommand() || command.isWaitForCommand())) {
+				throw e;
+			}
+
+			return output;
+		}
+	}
+
+	private void delayIfNeeded(long delay) {
+		if (delay > 0) {
+			try {
+				Thread.sleep(delay);
+			} catch (Exception e) {
+				LOG.warn("Step delay sleep command interrupted", e);
+			}
+		}
+	}
+
+
+	public void stopBrowser() {
 		commandProcessor.stop();
 		commandProcessor = null;
 
@@ -671,10 +757,10 @@ public class SeleniumDriverFixture {
 	public WebDriver getWebDriver() {
 		return commandProcessor instanceof WebDriverCommandProcessor
 				? ((WebDriverCommandProcessor) commandProcessor).getWrappedDriver()
-				: null;
+						: null;
 	}
-		
-		public boolean doOnWithUsingDriverOnUrlLoop(String[] commands, String[] targets, String[] values, WebDriver driver, String browserUrl, int iterations) throws ClassNotFoundException, SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
+
+	public boolean doOnWithUsingDriverOnUrlLoop(String[] commands, String[] targets, String[] values, WebDriver driver, String browserUrl, int iterations) throws ClassNotFoundException, SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException{
 		for(int h=0;h<iterations;h++){
 			for(int i=0;i<commands.length;i++){
 				ExtendedSeleniumCommand extendedSeleniumCommand = new ExtendedSeleniumCommand(commands[h]);
@@ -693,5 +779,47 @@ public class SeleniumDriverFixture {
 			}
 		}
 		return true;
+	}
+
+	private static class SeleniumCommandResult {
+		private boolean result;
+
+		private final String output;
+
+		private final Exception exception;
+
+		private SeleniumCommandResult(boolean result, String output, Exception e) {
+			this.result = result;
+			this.output = output;
+			this.exception = e;
+		}
+
+		public boolean failed() {
+			return !result;
+		}
+
+		public boolean succeeded() {
+			return result;
+		}
+
+		public boolean hasException() {
+			return exception != null;
+		}
+
+		public Exception getException() {
+			return exception;
+		}
+	}
+
+	private static SeleniumCommandResult success(String output) {
+		return new SeleniumCommandResult(true, output, null);
+	}
+
+	private static SeleniumCommandResult failure() {
+		return new SeleniumCommandResult(false, null, null);
+	}
+
+	private SeleniumCommandResult failure(Exception e) {
+		return new SeleniumCommandResult(false, null, e);
 	}
 }

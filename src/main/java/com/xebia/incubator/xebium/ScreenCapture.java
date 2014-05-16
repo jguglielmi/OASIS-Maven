@@ -74,12 +74,11 @@ class ScreenCapture {
 	void setScreenshotPolicy(String policy) throws IOException {
 		if ("none".equals(policy) || "nothing".equals(policy)) {
 			screenshotPolicy = ScreenshotPolicy.NONE;
-		} else if ("failure".equals(policy) || "error".equals(policy)) {
+		} else if ("failure".equals(policy) || "FAILURE".equals(policy) || "error".equals(policy) || "ERROR".equals(policy)) {
 			screenshotPolicy = ScreenshotPolicy.FAILURE;
-			initializeIndexIfNeeded();
-		} else if ("step".equals(policy) || "every step".equals(policy)) {
+		} else if ("step".equals(policy) || "STEP".equals(policy) || "every step".equals(policy) || "EVERY STEP".equals(policy)) {
 			screenshotPolicy = ScreenshotPolicy.STEP;
-		} else if ("assertion".equals(policy) || "every assertion".equals(policy)) {
+		} else if ("assertion".equals(policy) || "ASSERTION".equals(policy) || "every assertion".equals(policy) || "EVERY ASSERTION".equals(policy)) {
 			screenshotPolicy = ScreenshotPolicy.ASSERTION;
 		}
 		LOG.info("Screenshot policy set to " + screenshotPolicy);
@@ -87,21 +86,17 @@ class ScreenCapture {
 
 	/**
 	 * Is a screenshot desired, based on the command and the test result.
-	 *
-	 * @param command
-	 * @param result
-	 * @return
 	 */
-	boolean requireScreenshot(final ExtendedSeleniumCommand command,
+	public boolean requireScreenshot(final ExtendedSeleniumCommand command,
 			boolean result) {
 		return
-			(!command.isAssertCommand()
-				&& !command.isVerifyCommand()
-				&& !command.isWaitForCommand()
-				&& screenshotPolicy == ScreenshotPolicy.STEP)
-			|| (!result
-				&& (screenshotPolicy == ScreenshotPolicy.FAILURE
-					|| (command.isAssertCommand() && screenshotPolicy == ScreenshotPolicy.ASSERTION)));
+				(!command.isAssertCommand()
+						&& !command.isVerifyCommand()
+						&& !command.isWaitForCommand()
+						&& screenshotPolicy == ScreenshotPolicy.STEP)
+						|| (!result
+								&& (screenshotPolicy == ScreenshotPolicy.FAILURE
+								|| (command.isAssertCommand() && screenshotPolicy == ScreenshotPolicy.ASSERTION)));
 	}
 
 
@@ -136,7 +131,7 @@ class ScreenCapture {
 	}
 
 	private String executeCommand(String methodName, final String[] values) {
-			return commandProcessor.doCommand(methodName, values);
+		return commandProcessor.doCommand(methodName, values);
 	}
 
 	/**
@@ -145,10 +140,6 @@ class ScreenCapture {
 	 * <p>The base directory is expected to exist at this point.
 	 * </p>
 	 *
-	 * @param stepNumber
-	 * @param file
-	 * @param methodName
-	 * @param values
 	 * @throws IOException
 	 */
 	private void updateIndexFile(int stepNumber, File file, String methodName,

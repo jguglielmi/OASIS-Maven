@@ -204,6 +204,10 @@ public class ExtendedSeleniumCommand {
 	public ExtendedSeleniumCommand(String methodName) {
 		this.methodName = methodName;
 	}
+	
+	public String getMethodName(){
+		return methodName;
+	}
 
 	public static boolean isSupportedByWebDriver(String methodName) {
 		return WEB_DRIVER_COMMANDS.contains(methodName);

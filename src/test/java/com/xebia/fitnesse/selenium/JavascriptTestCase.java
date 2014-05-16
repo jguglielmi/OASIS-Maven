@@ -25,7 +25,7 @@ public class JavascriptTestCase {
 
 	final static String TEST_ENVIRONMENT = "src/test/resources/testCase.js";
 	final static String TEST_SETUP = "src/test/resources/testSetup.js";
-	final static String FILE_UNDER_TEST = "src/test/resources/xebiumformatter.js";
+	final static String FILE_UNDER_TEST = "src/main/ide/chrome/content/formats/xebiumformatter.js";
 
 	final static String EOL = System.getProperty("line.separator");
 
@@ -707,7 +707,7 @@ public class JavascriptTestCase {
     public void shouldParseFailedCheckCommands() {
     	eval("var fittable = 'ensure\tdo\twaitForElementPresent\t[false] expected [link=Xebium]\\n' +" +
     	"'check\tis\tverifyText\ton\tlink=Xebium\t[Execution of command failed: Element link=Xebium not found] expected [Xebium]\\n' +" +
-    	"'check\tis\twaitForTitle\t[Google] expected [xebia/Xebium \u00e0 GitHub[?]]\\n' +" +
+    	"'check\tis\twaitForTitle\t[Google] expected [xebia/Xebium á GitHub[?]]\\n' +" +
     	"'check\tis\tverifyText\ton\tcss=h1\t/.*Page[a-z]?/ found in: FrontPage\\n' +" +
     	"'check\tis\tverifyText\ton\tcss=h1\t/.*Page[a-z]?/ not found in: FrontPage';");
 
@@ -726,7 +726,7 @@ public class JavascriptTestCase {
         assertEquals("Xebium", eval("commands[1].value"));
 
 		assertEquals(eval("commands[2].comment").toString(), "waitForTitle", eval("commands[2].command"));
-        assertEquals("xebia/Xebium \u00e0 GitHub[?]", eval("commands[2].target"));
+        assertEquals("xebia/Xebium á GitHub[?]", eval("commands[2].target"));
         assertEquals("", eval("commands[2].value"));
 
 		assertEquals(eval("commands[3].comment").toString(), "verifyText", eval("commands[3].command"));

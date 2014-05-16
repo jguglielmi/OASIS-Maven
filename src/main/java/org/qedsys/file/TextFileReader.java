@@ -18,7 +18,7 @@
 			public TextFileReader(){
 			}
 			
-			public BufferedReader openFile(String fileName) throws FileNotFoundException{
+			public BufferedReader setFile(String fileName) throws FileNotFoundException{
 			this.fileName = fileName;
 			fileReader = new FileReader(fileName);
 			bufferedReader = new BufferedReader(fileReader);
