@@ -195,6 +195,11 @@
 
 		<!-- additional dependencies and plugins -->
 		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>1.8.5</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-scratchpad</artifactId>
 			<version>${poi.version}</version>
@@ -487,8 +492,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -574,8 +579,7 @@
 								<configuration>
 									<tasks>
 										<echo taskname="fitnesse"
-											message="Starting FitNesse... (Selenium 
-${selenium.version})" />
+											message="Starting FitNesse... (Selenium ${selenium.version})" />
 										<echo taskname="responders"
 											message="Registering responders..." />
 										<property file="saucelabs.properties" />
@@ -584,8 +588,7 @@ ${selenium.version})" />
 											value="[provide user through saucelabs.properties]" />
 										<property name="sauce.accesskey"
 											value="[provide accesskey through saucelabs.properties]" />
-										<java jar="fitnesse-standalone.jar" classpathref=
-"maven.runtime.classpath"
+										<java jar="fitnesse-standalone.jar" classpathref="maven.runtime.classpath"
 											fork="true">
 											<arg line="-p ${fitnesse.port}" />
 											<arg line="-o" />
@@ -636,9 +639,7 @@ ${selenium.version})" />
 											failonerror="true" maxmemory="1g">
 											<arg line="-p 8001" />
 											<arg
-												line="-c 
-ProjectXebium?suite&amp;format=text&amp;excludeSuiteFil
-ter=NotOnPhantomJS" />
+												line="-c ProjectXebium?suite&amp;format=text&amp;excludeSuiteFilter=NotOnPhantomJS" />
 											<arg line="-d ." />
 											<jvmarg value="-DBROWSER=phantomjs" />
 										</java>
