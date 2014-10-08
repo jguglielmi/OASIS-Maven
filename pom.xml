@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi=
-"http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<parent>
@@ -41,7 +40,7 @@
 		<operadriver.version>1.1</operadriver.version>
 		<phantomjsdriver.version>1.0.3</phantomjsdriver.version>
 		<commons-lang.version>2.6</commons-lang.version>
-		<selenium.version>2.39.0</selenium.version>
+		<selenium.version>2.43.1</selenium.version>
 		<poi.version>3.10-FINAL</poi.version>
 		<ant.version>1.8.2</ant.version>
 		<bcp.version>1.48</bcp.version>
@@ -58,11 +57,6 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
-			<version>${selenium.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-android-driver</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
 		<dependency>
@@ -88,11 +82,6 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-ie-driver</artifactId>
-			<version>${selenium.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-iphone-driver</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
 		<dependency>
@@ -166,19 +155,19 @@
 			<artifactId>JMeterBundle</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>runtime</scope>
-		</dependency>	
+		</dependency>
 		<dependency>
 			<groupId>sqljdbc4</groupId>
 			<artifactId>sqljdbc4</artifactId>
 			<version>1.0</version>
 			<scope>runtime</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>synthuse</groupId>
 			<artifactId>synthuse</artifactId>
 			<version>1.1.0</version>
 			<scope>runtime</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
 			<groupId>org.sikuli</groupId>
 			<artifactId>sikuli-java</artifactId>
@@ -315,16 +304,6 @@
 			<version>2.13</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpcore</artifactId>
-			<version>4.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpmime</artifactId>
-			<version>4.3.1</version>
-		</dependency>
-		<dependency>
 			<groupId>org.ini4j</groupId>
 			<artifactId>ini4j</artifactId>
 			<version>0.5.2</version>
@@ -433,11 +412,6 @@
 			<groupId>org.apache.xmlbeans</groupId>
 			<artifactId>xmlbeans</artifactId>
 			<version>2.3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.sikuli</groupId>
@@ -580,8 +554,7 @@
 									<tasks>
 										<echo taskname="fitnesse"
 											message="Starting FitNesse... (Selenium ${selenium.version})" />
-										<echo taskname="responders"
-											message="Registering responders..." />
+										<echo taskname="responders" message="Registering responders..." />
 										<property file="saucelabs.properties" />
 										<!-- "Sensible" defaults -->
 										<property name="sauce.user"

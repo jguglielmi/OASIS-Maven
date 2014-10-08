@@ -18,7 +18,7 @@ import org.sikuli.webdriver.WebDriverScreen;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverCommandProcessor;
+import com.thoughtworks.selenium.webdriven.WebDriverCommandProcessor;
 import org.openqa.selenium.WebElement;
 import org.sikuli.api.DefaultScreenRegion;
 import org.sikuli.api.ImageTarget;

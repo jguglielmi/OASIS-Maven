@@ -5,7 +5,7 @@ import static org.junit.Assert.assertNull;
 
 import java.net.MalformedURLException;
 
-import org.openqa.selenium.WebDriverCommandProcessor;
+import com.thoughtworks.selenium.webdriven.WebDriverCommandProcessor;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -32,18 +32,18 @@ public class WebDriverTest {
 
 		// And now use it
 		driver.get("http://www.google.com");
-		
+
 		driver.close();
 	}
-	
+
 	@Ignore
 	@Test
 	public void testWebDriverCommandProcessor() throws MalformedURLException {
-		
+
 		WebDriverCommandProcessor processor = new WebDriverCommandProcessor("http://www.google.com", new FirefoxDriver());
-		
+
 		processor.start();
-		
+
 		// And now use it
 		assertNull(processor.doCommand("open", new String[] { "/" }));
 		assertNull(processor.doCommand("type", new String[] { "q", "xebium is the new test solution" }));
@@ -52,11 +52,11 @@ public class WebDriverTest {
 	@Ignore
 	@Test
 	public void testCaptureScreenshhotCommand() throws MalformedURLException {
-		
+
 		WebDriverCommandProcessor processor = new WebDriverCommandProcessor("http://www.google.com", new FirefoxDriver());
-		
+
 		processor.start();
-		
+
 		// And now use it
 		assertNull(processor.doCommand("open", new String[] { "/" }));
 		// SeIDE supports captureEntirePageScreenshot[AndWait]

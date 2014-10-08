@@ -1,5 +1,7 @@
 !contents -R2 -g -p -f -h
 
+'''Run the test twice to start a grid on 5555, please add the latest selenium standalone jar file to files/selenium/standalone to run the grid'''
+
 !| script | selenium grid fixture |
 | set port | 5555 |
 | start hub |
