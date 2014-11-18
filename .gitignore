@@ -2,4 +2,5 @@
 /target
 /FitNesseRoot/files/testResults/*
 /FitNesseRoot/ErrorLogs/*
-
+apps/*
+!apps/*.zip

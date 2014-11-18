@@ -117,7 +117,11 @@ public class SeleniumDriverFixture {
 	public void loadFirefoxProfileFromDirectory(String directory) {
 		defaultWebDriverSupplier.setProfileDirectory(new File(directory));
 	}
-
+	
+	public void loadFirefoxFrom(String path) {
+		System.setProperty(DefaultWebDriverSupplier.FIREFOX_BIN_PROPERTY, path);
+	}
+	
 	/**
 	 * @param browser Name of the browser, as accepted by the DefaultWebDriverSupplier.
 	 */
@@ -444,6 +448,13 @@ public class SeleniumDriverFixture {
 		}
 		return result;
 	}
+	
+	public boolean maximize() {
+		WebDriver driver = getWebDriver();
+		driver.manage().window().maximize();
+		return true;
+	}
+
 	// The Below 2 functions (searchAllFrames) are used to search all frames for a specific xpath search, and also switchTo the frame that has the found web element
 
 	public WebElement searchAllFrames(String elementXpath) {
@@ -629,8 +640,8 @@ public class SeleniumDriverFixture {
 				WebElement webElement = getWebDriver().findElement(By.xpath(values[0]));
 				new Actions(getWebDriver()).contextClick(webElement).perform();
 				LOG.info("Performing | contextMenu | " + values[0] + " | " );
-			} catch (final SeleniumException e) {
-				LOG.error("Execution of command contextMenu failed: ", e.getMessage());
+			} catch (Exception e) {
+				LOG.warn("contextMenu command interrupted", e);
 			}
 			return null;
 		}
@@ -741,7 +752,6 @@ public class SeleniumDriverFixture {
 			}
 		}
 	}
-
 
 	public void stopBrowser() {
 		commandProcessor.stop();
