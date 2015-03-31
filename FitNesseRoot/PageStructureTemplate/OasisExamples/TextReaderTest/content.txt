@@ -1,6 +1,6 @@
 !contents -R2 -g -p -f -h
 
-| script | text file reader |
+| script | !-TextFileReader-! |
 | $textReader= | set file | ./FitNesseRoot/files/testFiles/SampleText.txt |
 | $line1= | read next line of | $textReader |
 | $line2= | read next line of | $textReader |

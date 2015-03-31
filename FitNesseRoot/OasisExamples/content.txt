@@ -1,19 +1,6 @@
 !contents -R2 -g -p -f -h
-
-
-!***> Preset variables
 !define TEST_SYSTEM {slim}
-!define BROWSER {firefox}
-!pomFile pom.xml@runtime
-***!
+!oasis
 
 
-
-
-
-
-
-
-
-
-
+[[Regular Expression Cheat Sheet][/files/testHtml/regex_cheat_sheet.html]]
