@@ -147,7 +147,7 @@
 		<dependency>
 			<groupId>org.fitnesse</groupId>
 			<artifactId>fitnesse</artifactId>
-			<version>20150114</version>
+			<version>20150424</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -162,6 +162,18 @@
 			<version>1.0</version>
 			<scope>runtime</scope>
 		</dependency>
+    <!-- fitnesse JDBC dependency -->
+    <dependency>
+      <groupId>com.github.andreptb</groupId>
+      <artifactId>fitnesse-jdbc-slim</artifactId>
+      <version>0.0.2</version>
+    </dependency>
+    <!-- ORACLE database driver -->
+    <dependency>
+      <groupId>com.oracle</groupId>
+      <artifactId>ojdbc6</artifactId>
+      <version>11.2.0.3</version>
+    </dependency>
 		<dependency>
 			<groupId>synthuse</groupId>
 			<artifactId>synthuse</artifactId>
@@ -663,3 +675,4 @@
 		</developer>
 	</developers>
 </project>
+
