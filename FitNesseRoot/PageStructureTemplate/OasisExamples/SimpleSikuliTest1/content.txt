@@ -1,8 +1,10 @@
 !contents -R2 -g -p -f -h
 
 | script | sikuli driver fixture | 
-| click | !-<img src="SimpleSikuliTest1?sik&img=startButton.png" />-! |
+| set wait time to | 8000 |
+| wait click | !-<img src="SimpleSikuliTest1?sik&img=test Start.png" />-! |
 | delay | 1000 | 
+| delay | 5000 |
 | type | calculator |
 | keyDown | ENTER | 
 | keyUp | ENTER | 

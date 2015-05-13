@@ -20,10 +20,13 @@ import org.sikuli.api.visual.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import fitnesse.slim.StopTestSlimException;
+
 import com.xebia.sikuli.ExtendedSikuliCommands; 
 
 import javax.crypto.*;
 import javax.crypto.spec.*;
+
 import org.synthuse.*; //for showing status window
 
 /**
@@ -53,8 +56,8 @@ public class SikuliDriverFixture extends SikuliCommandProcessor{
 	private int yOffSet=0;	
 	private double matching=0.75;
 	public ExtendedSikuliCommands extendedSikuliCommands;
-
-	
+	private static final String SIKULI_SCRIPTS_DIR = "FitNesseRoot/files/sikuliScripts/";
+	private static final String DIR_POSTFIX = ".sikuli";
 	public String sikuliScriptsDir = SikuliUtil.defaultScriptDir;
 	
 	public boolean showStatusText = true;
@@ -65,6 +68,7 @@ public class SikuliDriverFixture extends SikuliCommandProcessor{
 	public SikuliDriverFixture() {
 		refreshDesktopMouseScreen();
 	}
+	
 	
 	public SikuliDriverFixture(boolean startRefresh) {
 		if (startRefresh)
@@ -164,7 +168,7 @@ public class SikuliDriverFixture extends SikuliCommandProcessor{
 		if (imgStr.contains(sikuliResponderStr)) {
 			String imgPath = imgStr.substring(0, imgStr.indexOf(sikuliResponderStr));
 			imgPath = imgPath.substring(imgPath.indexOf(sikuliResponderStr2) + sikuliResponderStr2.length());
-			File dir = new File(sikuliScriptsDir, imgPath);
+			File dir = new File(SikuliDriverFixture.SIKULI_SCRIPTS_DIR, imgPath + SikuliDriverFixture.DIR_POSTFIX);
 			if (! dir.exists()) {
 				//LOG.debug("Failed to set Sikuli Image Path to: " + dir.getAbsolutePath());
 				dir = new File(sikuliScriptsDir, imgPath + ".sikuli");
@@ -207,7 +211,7 @@ public class SikuliDriverFixture extends SikuliCommandProcessor{
 		mouse.click(currentRegion().getCenter());
 	}
 
-	public boolean click(String imgOrText) throws IOException, AWTException {
+	public boolean click(String imgOrText) throws IOException, AWTException, StopTestSlimException {
 		StatusWindow statusDtr = statusText("click " + imgOrText);
 		refreshDesktopMouseScreen();
 		target1=fuzzyTarget(imgOrText);
@@ -228,7 +232,7 @@ public class SikuliDriverFixture extends SikuliCommandProcessor{
 		}
 	}
 	
-	public boolean waitClick(String imgOrText) throws IOException, AWTException {
+	public boolean waitClick(String imgOrText) throws IOException, AWTException, StopTestSlimException {
 		boolean waitResult = wait(imgOrText);
 		boolean clickResult = click(imgOrText);
 		return (waitResult && clickResult);
@@ -426,7 +430,7 @@ public class SikuliDriverFixture extends SikuliCommandProcessor{
 		return result;
 	}
 	
-	public boolean executeCommand(String cmd) {
+	public boolean executeCommand(String cmd) throws StopTestSlimException {
 		try {
 			Process p = Runtime.getRuntime().exec(cmd);
 			//p.waitFor();
@@ -664,7 +668,7 @@ public class SikuliDriverFixture extends SikuliCommandProcessor{
 		return org.oasis.plugin.Util.evaluateXpathGetValue(pom, xpathStr);
 	}
 	
-	public static String getFitnesseRootPath() {
+	public static String getPath() {
 		String path = "";
         try {
 			File fitRoot = new File("./FitNesseRoot");
