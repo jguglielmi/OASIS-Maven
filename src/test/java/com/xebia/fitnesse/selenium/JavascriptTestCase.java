@@ -707,7 +707,7 @@ public class JavascriptTestCase {
     public void shouldParseFailedCheckCommands() {
     	eval("var fittable = 'ensure\tdo\twaitForElementPresent\t[false] expected [link=Xebium]\\n' +" +
     	"'check\tis\tverifyText\ton\tlink=Xebium\t[Execution of command failed: Element link=Xebium not found] expected [Xebium]\\n' +" +
-    	"'check\tis\twaitForTitle\t[Google] expected [xebia/Xebium á GitHub[?]]\\n' +" +
+    	"'check\tis\twaitForTitle\t[Google] expected [xebia/Xebium ï¿½ GitHub[?]]\\n' +" +
     	"'check\tis\tverifyText\ton\tcss=h1\t/.*Page[a-z]?/ found in: FrontPage\\n' +" +
     	"'check\tis\tverifyText\ton\tcss=h1\t/.*Page[a-z]?/ not found in: FrontPage';");
 
@@ -723,10 +723,10 @@ public class JavascriptTestCase {
 
 		assertEquals(eval("commands[1].comment").toString(), "verifyText", eval("commands[1].command"));
         assertEquals("link=Xebium", eval("commands[1].target"));
-        assertEquals("Xebium", eval("commands[1].value"));
+        assertEquals("Xebium", eval("commands[1].value")); 
 
 		assertEquals(eval("commands[2].comment").toString(), "waitForTitle", eval("commands[2].command"));
-        assertEquals("xebia/Xebium á GitHub[?]", eval("commands[2].target"));
+        assertEquals("xebia/Xebium ï¿½ GitHub[?]", eval("commands[2].target"));
         assertEquals("", eval("commands[2].value"));
 
 		assertEquals(eval("commands[3].comment").toString(), "verifyText", eval("commands[3].command"));
