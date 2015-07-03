@@ -17,8 +17,8 @@
 	<url>http://github.com/jguglielmi/OASIS-Maven</url>
 
 	<description>
-   Selenium, Sikuli, Synthuse, and JMeter Fixture.
-  </description>
+		Selenium, Sikuli, Synthuse, and JMeter Fixture.
+	</description>
 
 	<licenses>
 		<license>
@@ -52,6 +52,13 @@
 		<developerConnection>scm:git:git://github.com/jguglielmi/OASIS.git</developerConnection>
 		<url>scm:git:git://github.com/jguglielmi/OASIS.git</url>
 	</scm>
+
+	<repositories>
+		<repository>
+			<id>codelds</id>
+			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -142,55 +149,48 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
 			<version>${slf4j.version}</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.fitnesse</groupId>
 			<artifactId>fitnesse</artifactId>
 			<version>20150424</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>JMeterBundle</groupId>
 			<artifactId>JMeterBundle</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>sqljdbc4</groupId>
 			<artifactId>sqljdbc4</artifactId>
 			<version>1.0</version>
-			<scope>runtime</scope>
 		</dependency>
-    <!-- fitnesse JDBC dependency -->
-    <dependency>
-      <groupId>com.github.andreptb</groupId>
-      <artifactId>fitnesse-jdbc-slim</artifactId>
-      <version>0.0.2</version>
-    </dependency>
-    <!-- ORACLE database driver -->
-    <dependency>
-      <groupId>com.oracle</groupId>
-      <artifactId>ojdbc6</artifactId>
-      <version>11.2.0.3</version>
-    </dependency>
+		<!-- fitnesse JDBC dependency -->
+		<dependency>
+			<groupId>com.github.andreptb</groupId>
+			<artifactId>fitnesse-jdbc-slim</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		<!-- ORACLE database driver -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency>
 		<dependency>
 			<groupId>synthuse</groupId>
 			<artifactId>synthuse</artifactId>
 			<version>1.1.0</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.sikuli</groupId>
 			<artifactId>sikuli-java</artifactId>
 			<version>1.0</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>oasis</groupId>
 			<artifactId>oasis-plugin</artifactId>
 			<version>1.0</version>
-			<scope>runtime</scope>
 		</dependency>
 
 
@@ -465,8 +465,6 @@
 		</dependency>
 	</dependencies>
 
-
-
 	<build>
 		<outputDirectory>build</outputDirectory>
 		<extensions>
@@ -476,7 +474,6 @@
 				<version>1.0-beta-7</version>
 			</extension>
 		</extensions>
-
 
 		<plugins>
 			<plugin>
@@ -510,6 +507,11 @@
 						<artifactId>maven-assembly-plugin</artifactId>
 						<version>2.2.1</version>
 						<configuration>
+							<archive>
+								<manifest>
+									<mainClass>fitnesseMain.FitNesseMain</mainClass>
+								</manifest>
+							</archive>
 							<descriptorRefs>
 								<descriptorRef>jar-with-dependencies</descriptorRef>
 							</descriptorRefs>
@@ -527,7 +529,6 @@
 				</plugins>
 			</build>
 		</profile>
-
 		<profile>
 			<id>ide</id>
 			<activation>
@@ -556,7 +557,6 @@
 				</plugins>
 			</build>
 		</profile>
-
 		<profile>
 			<id>fitnesse</id>
 			<build>
@@ -608,7 +608,6 @@
 				</dependency>
 			</dependencies>
 		</profile>
-
 		<profile>
 			<id>fitnesse-integration</id>
 			<activation>
