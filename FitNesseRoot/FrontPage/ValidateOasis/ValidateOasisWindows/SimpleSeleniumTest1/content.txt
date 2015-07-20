@@ -1,0 +1,22 @@
+!contents -R2 -g -p -f -h
+
+!define slim.timeout {60}
+
+!| script | default web driver supplier |
+| set browser | firefox |
+| $webDriver1= | new web driver |
+
+| script | selenium driver fixture |
+| start browser | firefox | on url | http://localhost:8000/ |
+| do | open | on | /files/testHtml/iFrameTest1.html |
+| ensure | do | waitForVisible | on | !-//input[@id='topTxt']-! |
+| ensure | do | click | on | !-//input[@value='fill city']-! |
+| do | selectWindow | on | null |
+| ensure | do | click | on | !-//input[@value='fill phone']-! |
+| ensure | do | click | on | !-//input[@value='fill top']-! |
+| ensure | do | click | on | !-//input[@value='fill names']-! |
+| ensure | do | click | on | !-//input[@value='fill email']-! |
+| check | is | verifyValue | on | id=email | !-test@test.net-! |
+| check | is | verifyValue | on | id=pnumber | 410-555-5555 |
+| stop browser |
+

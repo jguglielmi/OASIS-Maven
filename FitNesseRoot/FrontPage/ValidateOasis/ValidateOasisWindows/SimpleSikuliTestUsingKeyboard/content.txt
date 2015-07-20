@@ -1,0 +1,20 @@
+!contents -R2 -g -p -f -h
+
+
+| script | sikuli driver fixture | 
+| set the matching similarity to | 0.90|
+|executeCommand|calc|
+| delay | 500 | 
+| type | 1 |
+| type | + |
+| type | 1 |
+| keyDown | ENTER | 
+| keyUp | ENTER | 
+| wait | !-<img src="SimpleSikuliTestUsingKeyboard?sik&img=result.png" />-! |
+| keyDown | ALT | 
+| keyDown | F4 | 
+| keyUp | ALT | 
+| keyUp | F4 | 
+
+
+

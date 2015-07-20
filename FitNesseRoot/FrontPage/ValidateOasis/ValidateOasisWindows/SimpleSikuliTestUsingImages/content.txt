@@ -1,0 +1,19 @@
+!contents -R2 -g -p -f -h
+
+| script | sikuli driver fixture | 
+| set wait time to | 8000 |
+|executeCommand|calc|
+| wait click | !-<img src="SimpleSikuliTestUsingImages?sik&img=Number1.png" />-! |
+| click | !-<img src="SimpleSikuliTestUsingImages?sik&img=Plus.png" />-! |
+| wait click | !-<img src="SimpleSikuliTestUsingImages?sik&img=Number1.png" />-! |
+| keyDown | ENTER | 
+| keyUp | ENTER | 
+| wait | !-<img src="SimpleSikuliTestUsingImages?sik&img=result.png" />-! |
+| keyDown | ALT | 
+| keyDown | F4 | 
+| keyUp | ALT | 
+| keyUp | F4 | 
+
+
+
+
