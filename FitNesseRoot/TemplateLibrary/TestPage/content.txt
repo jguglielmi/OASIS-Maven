@@ -1,1 +1,24 @@
-<test page>
+!contents -R2 -g -p -f -h
+
+!*> !style_blue('''Given''') !style_green('''Provide information on what the starting point is''')
+<insert the testscript for the GIVEN situation>
+*!
+
+!*> !style_blue('''When''') !style_green('''Describe the main goal of the test''') 
+<insert the testscript for the WHEN situation>
+*!
+
+!*> !style_blue('''Then''') !style_green('''Describe the expected result''') 
+
+<insert the testscript for the then situation>
+
+*!
+
+
+
+!*> !style_blue('''Cleanup''') !style_green('''purging to make test repeatable''') 
+
+
+
+
+*!
