@@ -1,4 +1,0 @@
-!contents -R2 -g -p -f -h
-
-!| script | sql driver fixture |
-| connect to database and get count | 5 |

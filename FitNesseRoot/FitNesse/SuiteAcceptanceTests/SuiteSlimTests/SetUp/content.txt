@@ -1,8 +1,0 @@
-!|Import|
-|fitnesse.fixtures|
-
-!| SetUp | CustomComparators=glob:fitnesse.testsystems.slim.GlobComparator |
-
-|Library|
-|page driver|
-|echo fixture|
