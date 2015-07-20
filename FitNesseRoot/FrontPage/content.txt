@@ -13,6 +13,19 @@
 
 !contents -R2 -g -p -f -h
 
+!*** Preset variables
+!define TEST_SYSTEM {slim}
+!define BROWSER {firefox}
+!pomFile pom.xml@runtime
+!classpath
+
+!define COLLAPSE_SETUP {true}
+!define COLLAPSE_TEARDOWN {true}
+
+***!
+
+
+
 
 
 
