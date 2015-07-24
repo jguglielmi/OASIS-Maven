@@ -152,8 +152,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.fitnesse</groupId>
-			<artifactId>fitnesse</artifactId>
-			<version>20150424</version>
+			<artifactId>fitnesse-standalone</artifactId>
+			<version>OASIS</version>
 		</dependency>
 		<dependency>
 			<groupId>JMeterBundle</groupId>
