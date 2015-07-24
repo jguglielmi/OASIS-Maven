@@ -1,1 +1,0 @@
-start C:\Progra~2\Intern~1\iexplore.exe http://localhost:8000
