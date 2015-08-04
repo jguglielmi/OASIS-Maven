@@ -1,0 +1,27 @@
+!contents -R2 -g -p -f -h
+
+!***< Preset variables
+!define TEST_SYSTEM {slim}
+!define BROWSER {firefox}
+!pomFile pom.xml@runtime
+!classpath
+
+!define COLLAPSE_SETUP {true}
+!define COLLAPSE_TEARDOWN {true}
+
+***!
+
+!| import | 
+| com.xebia.incubator.xebium | 
+| com.xebia.sikuli | 
+| org.synthuse | 
+| org.qedsys.fitnesse |
+| org.oasis.fitnesse |
+| org.qedsys.file |
+
+|import|
+|com.github.andreptb.fitnesse| 
+
+|library|
+|jdbc fixture|
+

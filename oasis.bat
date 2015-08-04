@@ -1,0 +1,1 @@
+java -jar fitnesse.jar -d . -p 8000 -o -e 0

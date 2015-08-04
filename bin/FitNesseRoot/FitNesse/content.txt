@@ -1,3 +1,0 @@
-!contents -g
-!path classes
-!path lib/*.jar
