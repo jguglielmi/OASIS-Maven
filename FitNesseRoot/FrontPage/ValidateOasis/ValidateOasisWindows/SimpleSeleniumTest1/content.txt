@@ -18,5 +18,4 @@
 | ensure | do | click | on | !-//input[@value='fill email']-! |
 | check | is | verifyValue | on | id=email | !-test@test.net-! |
 | check | is | verifyValue | on | id=pnumber | 410-555-5555 |
-| stop browser |
 
