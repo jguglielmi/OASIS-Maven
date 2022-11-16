@@ -393,7 +393,7 @@
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>1.8</version>
+			<version>1.32</version>
 		</dependency>
 		<dependency>
 			<groupId>stax</groupId>
@@ -572,24 +572,20 @@
 								<phase>test</phase>
 								<configuration>
 									<tasks>
-										<echo taskname="fitnesse"
-											message="Starting FitNesse... (Selenium ${selenium.version})" />
-										<echo taskname="responders" message="Registering responders..." />
-										<property file="saucelabs.properties" />
+										<echo taskname="fitnesse" message="Starting FitNesse... (Selenium ${selenium.version})"/>
+										<echo taskname="responders" message="Registering responders..."/>
+										<property file="saucelabs.properties"/>
 										<!-- "Sensible" defaults -->
-										<property name="sauce.user"
-											value="[provide user through saucelabs.properties]" />
-										<property name="sauce.accesskey"
-											value="[provide accesskey through saucelabs.properties]" />
-										<java jar="fitnesse-standalone.jar" classpathref="maven.runtime.classpath"
-											fork="true">
-											<arg line="-p ${fitnesse.port}" />
-											<arg line="-o" />
-											<arg line="-d ." />
-											<arg line="-e ${fitnesse.expiration}" />
-											<jvmarg value="-DBROWSER=firefox" />
-											<jvmarg value="-Dsauce.user=${sauce.user}" />
-											<jvmarg value="-Dsauce.accesskey=${sauce.accesskey}" />
+										<property name="sauce.user" value="[provide user through saucelabs.properties]"/>
+										<property name="sauce.accesskey" value="[provide accesskey through saucelabs.properties]"/>
+										<java jar="fitnesse-standalone.jar" classpathref="maven.runtime.classpath" fork="true">
+											<arg line="-p ${fitnesse.port}"/>
+											<arg line="-o"/>
+											<arg line="-d ."/>
+											<arg line="-e ${fitnesse.expiration}"/>
+											<jvmarg value="-DBROWSER=firefox"/>
+											<jvmarg value="-Dsauce.user=${sauce.user}"/>
+											<jvmarg value="-Dsauce.accesskey=${sauce.accesskey}"/>
 										</java>
 									</tasks>
 								</configuration>
@@ -626,14 +622,12 @@
 								<phase>integration-test</phase>
 								<configuration>
 									<tasks>
-										<echo taskname="fitnesse" message="Starting FitNesse..." />
-										<java jar="fitnesse-standalone.jar" fork="true"
-											failonerror="true" maxmemory="1g">
-											<arg line="-p 8001" />
-											<arg
-												line="-c ProjectXebium?suite&amp;format=text&amp;excludeSuiteFilter=NotOnPhantomJS" />
-											<arg line="-d ." />
-											<jvmarg value="-DBROWSER=phantomjs" />
+										<echo taskname="fitnesse" message="Starting FitNesse..."/>
+										<java jar="fitnesse-standalone.jar" fork="true" failonerror="true" maxmemory="1g">
+											<arg line="-p 8001"/>
+											<arg line="-c ProjectXebium?suite&amp;format=text&amp;excludeSuiteFilter=NotOnPhantomJS"/>
+											<arg line="-d ."/>
+											<jvmarg value="-DBROWSER=phantomjs"/>
 										</java>
 									</tasks>
 								</configuration>
